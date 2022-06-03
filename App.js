@@ -6,6 +6,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 //import our custom made components
 import Header from './src/components/Header';
+import Search from './src/components/Search';
 
  const App = () => {
   return (
@@ -15,6 +16,7 @@ import Header from './src/components/Header';
     */
     <View style={styles.container}>
       <Header/>
+      <Search />
       <StatusBar style="auto"/>
     </View>
   );
