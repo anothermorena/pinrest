@@ -4,6 +4,9 @@ import { StatusBar } from 'expo-status-bar';
 //we need to import these components from react native in order to utilize them inside our jsx blocks
 import { StyleSheet, Text, View } from 'react-native';
 
+//import our custom made components
+import Header from './src/components/Header';
+
  const App = () => {
   return (
     /*
@@ -11,9 +14,7 @@ import { StyleSheet, Text, View } from 'react-native';
       To apply styles in React Native, its pretty much the same as in react.
     */
     <View style={styles.container}>
-      {/*The text component is equivalent to a p tag or an h1 tag in web dev. It is used to wrap text */}
-      <Text>Deleicious Food Search 2</Text>
-     {/* */}
+      <Header/>
       <StatusBar style="auto"/>
     </View>
   );
@@ -23,12 +24,12 @@ import { StyleSheet, Text, View } from 'react-native';
 //we import the stylesheet component from react native to facilitate this.
 //we define all this styles inside the stylesheet object and store them inside a styles variable.
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff3e0',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  //container: {
+  //  flex: 1,
+  //  backgroundColor: '#fff3e0',
+  //  alignItems: 'center',
+  //  justifyContent: 'center',
+  //},
 });
 
 
