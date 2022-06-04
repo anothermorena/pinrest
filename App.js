@@ -2,16 +2,17 @@
 import { StatusBar } from 'expo-status-bar';
 
 //we need to import these components from react native in order to utilize them inside our jsx blocks
-import { StyleSheet, View, FlatList } from 'react-native';
+import { StyleSheet, View} from 'react-native';
+import {useState} from "react";
 
 
 //import our custom made components
 import Header from './src/components/Header';
 import Search from './src/components/Search';
-import CategoryItem from './src/components/CategoryItem';
+import Categories from './src/components/Categories';
 
  const App = () => {
-
+  const [term, setTerm] = useState("Burger");  //set the initial state of the search term to burger
   const commonCategories = [
     {
       name: "Burger",
@@ -44,19 +45,8 @@ import CategoryItem from './src/components/CategoryItem';
     */
     <View style={styles.container}>
       <Header/>
-      <Search />
-      {/* The flatlist component is used to render items in a scrollable list view.  In our case, it is going to iterate over every single element of our array of objects*/}
-      <FlatList data={commonCategories} renderItem = {({item,index}) => { 
-
-        return (
-          <CategoryItem  name={item.name} imageUrl={item.imageUrl} index={index}/>
-        )
-      }}
-      horizontal
-      showsHorizontalScrollIndicator={false}
-      keyExtractor={(item) => item.name}
-      />
-     
+      <Search setTerm={setTerm}/>
+      <Categories term={term} setTerm={setTerm} categories={commonCategories}/>
       <StatusBar style="auto"/>
     </View>
   );
