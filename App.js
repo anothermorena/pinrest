@@ -10,6 +10,7 @@ import {useState} from "react";
 import Header from './src/components/Header';
 import Search from './src/components/Search';
 import Categories from './src/components/Categories';
+import Restaurants from './src/components/Restaurants';
 
  const App = () => {
   const [term, setTerm] = useState("Burger");  //set the initial state of the search term to burger
@@ -47,6 +48,7 @@ import Categories from './src/components/Categories';
       <Header/>
       <Search setTerm={setTerm}/>
       <Categories term={term} setTerm={setTerm} categories={commonCategories}/>
+      <Restaurants />
       <StatusBar style="auto"/>
     </View>
   );
