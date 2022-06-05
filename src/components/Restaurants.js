@@ -1,20 +1,10 @@
 import {View,Text,StyleSheet} from "react-native";
-import yelp from "../api/yelp";
+import useRestaurants from "../hooks/useRestaurants";
 
 const Restaurants = () => {
 
-  //function that allows us to search for a specific restaurant
-  const searchRestaurants = async () => {
-    //we use the yelp api to search for a specific restaurant
-    const response = await yelp.get("/search", {
-      params: {
-        limit: 50,
-        term: "Pizza",
-        location: "san jose"
-      }
-    });
-    return response.data.businesses;
-  }
+  const [{data,loading, error}, searchRestaurants] = useRestaurants();
+
   return (
   <View style={styles.container}>
     <Text style={styles.header}>Top Restaurants</Text>
