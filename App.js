@@ -48,7 +48,7 @@ import Restaurants from './src/components/Restaurants';
       <Header/>
       <Search setTerm={setTerm}/>
       <Categories term={term} setTerm={setTerm} categories={commonCategories}/>
-      <Restaurants />
+      <Restaurants  term={term} />
       <StatusBar style="auto"/>
     </View>
   );

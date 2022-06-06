@@ -1,9 +1,8 @@
 import axios from "axios";
-import Config from 'react-native-config'
 
 export default axios.create({
     baseURL: "https://api.yelp.com/v3/businesses",
     headers: {
-        Authorization: "Bearer " + Config.YELP_API_KEY
+        Authorization: "Bearer ufgrI6YfTLwarNTWORzSP16NKKhcaCU7EYAJdTrQh9IQEs9dSXHFAP3SBnpRCqqTNEhVhZXzsUpTseugpx6moJxC0-lk3xABywg7MEdxMKIbKDu6sKoFFpOcdambYnYx" 
     }
 });
